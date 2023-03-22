@@ -7,35 +7,28 @@ public class Main {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		int n = scanner.nextInt(); 			// 과목갯수
-		int m = 0;							// 최고점
-		int[] score = new int [ n ];		// 입력점수
-		double[] fake = new double[ n ];	// 입력점수계산				
-		double sum = 0;						// 계산된점수의 총 합
-		double result = 0; 					// 새로운 평균
+		int n = scanner.nextInt(); 			// 과목갯수			// 과목갯수를 입력받기 위한 변수
+		double[] score = new double [ n ];	// 입력점수			// 입력받을 점수를 저장할 배열
+		double m = 0;						// 최고점				// 입력받은 점수중 최고점을 담을 변수
+		double[] fake = new double[ n ];	// 입력점수계산			// 입력받은점수와 최고점을 문제에 제시된방법으로 계산후 값을 담을 배열
+		double sum = 0;						// 계산된점수의 총 합		// 계산된 값의 총합을 담을 변수
 		
+		// for 반복문을 활용해 값을 입력받고 그중 가장 큰 수를 m 변수에 담는다
 		for( int i=0; i<n; i++ ) {
-			
 			score[i] = scanner.nextInt();
-			if( score[i] > m ) {
+			if( score[i] > m ) { // 만약 입력값이 기존 m 값보다 크다면 입력값이 m 에 대입, >> 입력값중 가장 큰 값이 m 이 된다.
 				m = score[i];
 			}
-			System.out.println("score : " + score[i] );
 		}
-		System.out.println( score[0] +" "+ score[1] +" "+ score[2] );
-		System.out.println( m );
 		
+		// 입력된 점수가 담긴 배열과 저장할 배열 ( fake ) 을 반복문을 돌리고 이때 fake 배열에는 문제에서 제시된 계산방법으로 새롭게 계산된 점수를 넣는다.
 		for( int i=0; i<n; i++ ) {
-			fake[i] = score[i]/m*100;
-			System.out.println( fake[i] );
-			sum += fake[i];
-			System.out.println( sum );
+			fake[i] = (score[i]/m)*100;
+			sum += fake[i]; // 계산된 값은 누적더하기로 총 합계로 sum 에 담는다
 		}
 		
-		result = sum/n;
-		System.out.println( result );
-		
-		
+		// 이후 입력받은 과목갯수 ( n ) 로 총합계점수를 나누어 평균을 구한다.
+		System.out.println( sum/n );		
 	}
 }
 /*
