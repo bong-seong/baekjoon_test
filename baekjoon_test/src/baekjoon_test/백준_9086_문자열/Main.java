@@ -12,12 +12,11 @@ public class Main {
 		String[] array = new String[ t ];
 		
 		for( int i=0; i<t; i++ ) {
-			
 			array[i] = br.readLine();
-			
 		}
 		
-		
-		
+		for( int i=0; i<t; i++ ) {
+			System.out.println( array[i].charAt(0) + "" + array[i].charAt( array[i].length() - 1) );
+		}
 	}
 }
