@@ -1,5 +1,4 @@
 package baekjoon_test.백준_2563_색종이;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,32 +7,39 @@ import java.util.StringTokenizer;
 public class Main {
 	public static void main(String[] args) throws IOException {
 		
-		
 		BufferedReader br = new BufferedReader( new InputStreamReader(System.in) );
+		StringTokenizer st;
 		
-		int n = Integer.parseInt( br.readLine() ); // 색종이의 수
-		int max = 0;
+		int n = Integer.parseInt( br.readLine() );
 		
-		int[][] array = new int[n][2]; 
+		boolean[][] array = new boolean [100][100]; 
 		
 		for( int i=0; i<n; i++ ) {
 			
-			StringTokenizer st = new StringTokenizer( br.readLine() , " ");
+			st = new StringTokenizer( br.readLine() , " ");
 			
-			for( int j=0; j<n; j++ ) {
-				for( int k=0; k<st.countTokens(); k++ ) {
-					array[i][j] = Integer.parseInt(st.nextToken()) ;
+			int width = Integer.parseInt( st.nextToken() );
+			int height = Integer.parseInt( st.nextToken() );
+			
+			for( int j=height; j<height+10; j++ ) {
+				for( int k=width; k<width+10; k++ ) {
+					array[j][k] = true;
+					
 				}
 			}
 		}
 		
-		for( int i=0; i<n; i++ ) {
-			for( int j=0; j<2; j++ ) {
-				System.out.print( array[i][j] + " " );
+		int count = 0;
+		
+		for( int i=0; i<array.length; i++ ) {
+			for( int j=0; j<array.length; j++ ) {
+				if( array[i][j] ) {
+					count++;
+					
+				}
+				System.out.print( array[i][j] + "\n");
 			}
-			System.out.println();
 		}
-		
-		
+		System.out.println(count);
 	}
 }
