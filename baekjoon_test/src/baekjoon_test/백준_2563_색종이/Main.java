@@ -1,4 +1,5 @@
 package baekjoon_test.백준_2563_색종이;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,7 +25,6 @@ public class Main {
 			for( int j=height; j<height+10; j++ ) {
 				for( int k=width; k<width+10; k++ ) {
 					array[j][k] = true;
-					
 				}
 			}
 		}
@@ -35,11 +35,17 @@ public class Main {
 			for( int j=0; j<array.length; j++ ) {
 				if( array[i][j] ) {
 					count++;
-					
 				}
-				System.out.print( array[i][j] + "\n");
 			}
 		}
 		System.out.println(count);
 	}
 }
+
+/*
+
+	[0][0] = 3 	[0][1] = 7	3>0
+	[1][0] = 15 [1][1] = 7	15>3
+	[2][0] = 5 	[2][1] = 2	5>15
+
+*/
