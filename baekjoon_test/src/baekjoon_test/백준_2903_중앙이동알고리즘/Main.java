@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class Main {
 	public static void main(String[] args) throws IOException {
 		
-		// (3+2의n-1제곱) X (3+2의n-1제곱)
+		
 		// ((2의n제곱+1)+(2의n-1제곱)) X ((2의n제곱+1)+(2의n-1제곱))
 		
 		BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
