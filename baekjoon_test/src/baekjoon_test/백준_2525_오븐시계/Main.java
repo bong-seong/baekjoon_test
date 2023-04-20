@@ -17,19 +17,18 @@ public class Main {
 		
 		int plus = Integer.parseInt( br.readLine() );
 		
-		System.out.println( m+plus > 60 && plus < 60 );
+		int time = (h*60)+m+plus ;
 		
-		if( plus/60 >= 1 ) {
-			h += plus/60;
-		}
-		if( m+plus > 60 && plus < 60 ) {
-			h++;
-		}
-		if( h == 24 ) {
-			h = 0;
+		int hh = time/60;
+		int mm = time%60;
+		
+		if( time >= 1440 ) {
+			hh = hh%24 ;
 		}
 		
-		System.out.println( h + " " + m );
+		System.out.println( hh + " " + mm );
+		
+		
 		
 	}
 }
