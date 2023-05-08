@@ -1,9 +1,18 @@
 package baekjoon_test.백준_24267_알고리즘의수행시간6;
 
-public class Main {
-	public static void main(String[] args) {
-		
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
+public class Main {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader( new InputStreamReader( System.in) );
+		
+		long n = Long.parseLong( br.readLine() );
+		
+		System.out.println( (n-2)*(n-1)*n/6 );
+		System.out.println( 3 );
 		
 	}
 }
@@ -23,6 +32,7 @@ public class Main {
 	
 	n = 7 이라 가정했을때,
 	15+10+6+4 
+	(n-2) * (n-1) * n 
 	
 	i = 1			1<5			i++					15
 		j=2				2<6			j++
